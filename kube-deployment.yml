@@ -31,12 +31,12 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: asia.gcr.io/effective-might-323902/hello-world-k8s-jeremy:latest
+        image: asia.gcr.io/effective-might-323902/hello-world-k8s-hein
         envFrom:
           - configMapRef:
-              name: hello-world-k8s-jeremy-env
+              name: hello-world-k8s-hein-env
           - secretRef:
-              name: hello-world-k8s-jeremy-secret
+              name: hello-world-k8s-hein-secret
         resources:
           limits:
             cpu: 200m
