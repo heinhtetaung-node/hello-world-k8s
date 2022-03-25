@@ -1,37 +1,37 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: helloworld
+  name: hello-world-k8s-hha
   labels:
-    app: helloworld
+    app: hello-world-k8s-hha
 spec:
   ports:
   - name: http
     port: 3000
     targetPort: 3000
   selector:
-    app: helloworld
+    app: hello-world-k8s-hha
   type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: helloworld
+  name: hello-world-k8s-hha
   labels:
-    app: helloworld
+    app: hello-world-k8s-hha
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: helloworld
+      app: hello-world-k8s-hha
   template:
     metadata:
       labels:
-        app: helloworld
+        app: hello-world-k8s-hha
     spec:
       containers:
-      - name: helloworld
-        image: asia.gcr.io/effective-might-323902/hello-world-k8s-hein
+      - name: hello-world-k8s-hha
+        image: asia.gcr.io/effective-might-323902/hello-world-k8s-hha
         envFrom:
           - configMapRef:
               name: hello-world-k8s-hein-env
