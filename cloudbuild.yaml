@@ -49,7 +49,7 @@ steps:
 
   - id: Apply deploy
     name: gcr.io/cloud-builders/gke-deploy
-    args: ["apply", "--filename=kube-deployment.yml", "--cluster=hein-cluster", "--location=asia-southeast1", "--namespace=hein"]
+    args: ["apply", "--filename=kube-deployment.yml", "--cluster=hein-cluster", "--location=asia-southeast1", "--namespace=jeremy"]
 
 options:
   substitutionOption: ALLOW_LOOSE
