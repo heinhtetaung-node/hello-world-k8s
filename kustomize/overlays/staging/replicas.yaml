@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-k8s-hha
+  labels:
+    app: hello-world-k8s-hha
+spec:
+  replicas: 2
+
+
