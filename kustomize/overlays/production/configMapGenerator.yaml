@@ -1,6 +1,6 @@
 apiVersion: builtin
 kind: ConfigMapGenerator
 metadata:
-  name: hello-world-k8s-jeremy-env
+  name: hello-world-k8s-hein-env
 envs:
 - name.env
