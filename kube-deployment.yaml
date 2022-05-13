@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-k8s-hha
+  labels:
+    app: hello-world-k8s-hha
+spec:
+  ports:
+  - name: http
+    port: 3000
+    targetPort: 3000
+  selector:
+    app: hello-world-k8s-hha
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-k8s-hha
+  labels:
+    app: hello-world-k8s-hha
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-k8s-hha
+  template:
+    metadata:
+      labels:
+        app: hello-world-k8s-hha
+    spec:
+      containers:
+      - name: hello-world-k8s-hha
+        image: asia.gcr.io/effective-might-323902/hello-world-k8s-hha
+        envFrom:
+          - configMapRef:
+              name: hello-world-k8s-hein-env
+          - secretRef:
+              name: hello-world-k8s-hein-secret
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        ports:
+        - containerPort: 3000

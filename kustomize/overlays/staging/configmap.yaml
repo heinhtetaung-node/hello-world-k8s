@@ -1,0 +1,3 @@
+configMapGenerator:
+- name: hello-world-k8s-hein-env
+

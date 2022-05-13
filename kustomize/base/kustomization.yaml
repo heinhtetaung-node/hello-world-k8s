@@ -1,3 +1,2 @@
 resources:
-  - kube-deployment.yaml
-
+- kube-deployment.yaml
