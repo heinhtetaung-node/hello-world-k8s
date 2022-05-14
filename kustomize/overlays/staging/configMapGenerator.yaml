@@ -3,4 +3,6 @@ kind: ConfigMapGenerator
 metadata:
   name: hello-world-k8s-hein-env
 envs:
-- name.env
+  - application-secret.properties
+options:
+  disableNameSuffixHash: true
